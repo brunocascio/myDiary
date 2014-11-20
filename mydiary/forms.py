@@ -1,4 +1,4 @@
-from django import forms 
+from django 		import forms 
 from mydiary.models import Diary
 
 class LoginForm(forms.Form):
