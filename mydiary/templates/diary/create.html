@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<form method="post" action="">{% csrf_token %}
+		<!--{{ form.as_p }}-->
+		{% include "diary/snippets/form_edit_diary.html"%}
+		<input type="submit" value="Enviar"/>
+	</form>
+{% endblock %}

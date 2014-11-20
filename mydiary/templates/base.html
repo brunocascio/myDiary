@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Diary | {% if user.is_authenticated %} {{ user }} {% else %} Hola {% endif %}</title>
+	</head>
+	<body>
+		{% block content %}{% endblock %}
+	</body>
+</html>

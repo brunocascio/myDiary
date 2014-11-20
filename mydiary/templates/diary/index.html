@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+	{% for d in diaries %}
+		<div class="diary">
+			<a href="{% url 'diary_detail' d.id %}">
+				<div style="background:#f2f2f2; padding:10px; margin:10px auto;">
+					<div>
+						{{d.id}} {{ d.author }} | Nacido el: {{ d.author.profile.birthdate }}
+					</div>
+					<div>
+						{{ d.title }} <div>{{ d.text }}</div>
+					</div>
+				</div>
+			</a>
+			{% if user == d.author %}
+				<form method="DELETE" action="{% url 'diary_delete' d.id %}">				
+					<input type="submit" value="Borrar" />
+				</form>
+			{% endif %}
+		</div>
+	{% endfor %}
+{% endblock %}
